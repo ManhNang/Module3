@@ -1,0 +1,5 @@
+Trong quy trình trả xe của AutoRide, việc ghi nhận sự cố hư hỏng (bảng Inspections) chỉ phản ánh định tính thiệt hại. Cột damage_fee trong bảng Rentals đóng vai trò là mắt xích định lượng bắt buộc vì các lý do:
+1. Khép kín luồng tính toán tài chính: Công thức hoàn tiền Refund = Deposit - LateFee - DamageFee yêu cầu mọi biến số phải được số hóa trực tiếp trên hợp đồng. Thiếu damage_fee, hệ thống không thể tự động kết toán.
+2. Đảm bảo tính toàn vẹn dữ liệu (Data Integrity): Giúp lưu vết chính xác nghĩa vụ tài chính phát sinh của từng lượt thuê, tránh tình trạng nhân viên phải tính toán thủ công ngoài hệ thống – nguyên nhân chính gây ra sai sót và thất thoát lợi nhuận.
+3. Phục vụ đối soát và báo cáo kế toán: Cho phép doanh nghiệp dễ dàng truy vấn, phân tích doanh thu từ phí đền bù và chi phí sửa chữa xe thực tế.
+Thiếu damage_fee, cơ sở dữ liệu sẽ bị "lệch pha" hoàn toàn với luồng xử lý nghiệp vụ thực tế.
