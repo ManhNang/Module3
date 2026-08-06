@@ -1,0 +1,18 @@
+use classicmodels;
+
+DELIMITER //
+create procedure findAllCustomer()
+begin
+select * from customers;
+end //
+DELIMITER ;
+
+call findAllCustomer();
+
+DELIMITER //
+drop procedure if exists `findAllCustomer`//
+create procedure findAllCustomer()
+begin
+select * from customers where customerNumber = 175;
+end //
+DELIMITER ;
