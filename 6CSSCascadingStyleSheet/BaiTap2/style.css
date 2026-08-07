@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.container {
+    max-width: 630px;
+    margin: 0 auto;
+}
+
+h1 {
+    margin: 0px;
+}
+
+.subtitle {
+    font-size: 13px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+hr {
+    border-top: 1px solid #939292;
+    margin: 2px;
+}
+
+.paragraph {
+    text-align: justify;
+    text-indent: 30px;
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(0, 123, 255);
+}
+
+i {
+    font-style: normal;
+    color: rgb(0, 0, 182);
+}
+
+sup {
+    font-size: 11px;
+    color: #2b52a1;
+}
