@@ -1,0 +1,183 @@
+/* Reset CSS cơ bản */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    color: #333;
+    padding-top: 70px; /* Tạo khoảng trống do Header giữ cố định */
+}
+
+/* 1. Phần Header cố định (Mức trung bình) */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #ff6b6b;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.header .logo h1 {
+    font-size: 24px;
+}
+
+.header .search-box input {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+}
+
+/* 2. Phần Head-link */
+.head-link {
+    background-color: #4ecdc4;
+}
+
+.head-link ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.head-link a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none; /* Bỏ gạch chân link */
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+/* Hover/Active cho link (Mức trung bình) */
+.head-link a:hover,
+.head-link a.active {
+    font-weight: bold; /* Bôi đậm */
+    color: #ffe66d;    /* Đổi màu chữ */
+    background-color: rgba(0,0,0,0.1);
+}
+
+/* 3. Bố cục chính (Content) */
+.main-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+    gap: 20px;
+}
+
+/* Left content - Menu video */
+.left-content {
+    flex: 1;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.left-content h3 {
+    margin-bottom: 12px;
+    color: #ff6b6b;
+    border-bottom: 2px solid #f4f4f9;
+    padding-bottom: 8px;
+}
+
+.video-list {
+    list-style: none;
+}
+
+.video-list li {
+    margin-bottom: 8px;
+}
+
+.video-list a {
+    text-decoration: none; /* Bỏ gạch chân link */
+    color: #444;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    transition: all 0.2s ease;
+}
+
+.video-list a:hover {
+    font-weight: bold;
+    color: #ff6b6b;
+    background-color: #ffe66d;
+}
+
+/* Right content - Trình chiếu Video */
+.right-content {
+    flex: 3;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.right-content h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
+
+/* Khung Responsive Video 16:9 */
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* Tỉ lệ khung hình 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: #000;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 4. Footer */
+.footer {
+    background-color: #2f2fa2;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+}
+
+/* 5. Đáp ứng màn hình RWD (Mức nâng cao) */
+@media screen and (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* Chuyển thành bố cục 1 cột trên Mobile/Tablet */
+    }
+
+    .header {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+    }
+
+    body {
+        padding-top: 95px; /* Điều chỉnh lại offset của Fixed Header trên mobile */
+    }
+
+    .head-link ul {
+        flex-direction: column;
+        text-align: center;
+    }
+}

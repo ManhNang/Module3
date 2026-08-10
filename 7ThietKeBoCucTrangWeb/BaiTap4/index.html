@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Xem Phim Hoạt Hình Trực Tuyến</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Header cố định -->
+    <header class="header">
+      <div class="logo">
+        <h1>HOẠT HÌNH KID</h1>
+      </div>
+      <div class="search-box">
+        <input type="text" placeholder="Tìm kiếm phim hoạt hình..." />
+      </div>
+    </header>
+
+    <!-- Thanh điều hướng Link -->
+    <nav class="head-link">
+      <ul>
+        <li><a href="#" class="active">Trang chủ</a></li>
+        <li><a href="#">Mới cập nhật</a></li>
+        <li><a href="#">Xem nhiều nhất</a></li>
+        <li><a href="#">Phim thuyết minh</a></li>
+        <li><a href="#">Liên hệ</a></li>
+      </ul>
+    </nav>
+
+    <!-- Thân trang (Left & Right Content) -->
+    <main class="main-container">
+      <!-- Menu danh sách video bên trái -->
+      <aside class="left-content">
+        <h3>Danh sách video</h3>
+        <ul class="video-list">
+          <li>
+            <a
+              href="https://www.youtube.com/embed/UdYGyPAi830"
+              target="video-frame"
+              class="active"
+              >1. Phim Hoạt Hình 01 (Thuyết minh)</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/embed/zaPP4EYSxv8"
+              target="video-frame"
+              >2. Phim Hoạt Hình 02 (Full HD)</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/embed/OmMcLH6GhNA"
+              target="video-frame"
+              >3. Phim Hoạt Hình 03 (Audio Việt)</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.youtube.com/embed/i7hhNwxIyAA"
+              target="video-frame"
+              >4. Phim Hoạt Hình 04 (Tập mới)</a
+            >
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Trình chiếu video bên phải -->
+      <section class="right-content">
+        <h2>Nội dung đang phát</h2>
+        <div class="video-wrapper">
+          <iframe
+            name="video-frame"
+            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="YouTube video player"
+            frameborder="0"
+            allow="
+              accelerometer;
+              autoplay;
+              clipboard-write;
+              encrypted-media;
+              gyroscope;
+              picture-in-picture;
+            "
+            allowfullscreen
+          >
+          </iframe>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <p>
+        &copy; 2026 Website Xem Phim Hoạt Hình Trẻ Em. Bản quyền thuộc về
+        CodeGym.
+      </p>
+    </footer>
+  </body>
+</html>
