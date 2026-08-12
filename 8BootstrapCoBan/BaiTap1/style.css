@@ -1,0 +1,36 @@
+.gallery {
+    border: 1px solid rgba(70, 70, 70, 0.399);
+    transition: border-color 0.2s;
+}
+
+.gallery:hover {
+    border-color: black;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+.custom-col {
+    flex: 0 0 auto;
+    width: 25%;
+}
+
+@media only screen and (max-width: 700px) {
+    .custom-col {
+    width: 50%;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .custom-col {
+    width: 100%;
+    }
+}

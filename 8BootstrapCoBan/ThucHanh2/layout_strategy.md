@@ -1,0 +1,3 @@
+CSS Grid là hệ thống dàn trang 2 chiều (2D - hàng và cột), cho phép kiểm soát toàn bộ khung cấu trúc từ bên ngoài. Nó lý tưởng làm Layout tổng thể nhờ khả năng phân chia các vùng không gian cố định, bất đối xứng (như Bento Grid hay Dashboard) mà không phụ thuộc vào nội dung bên trong.
+
+Ngược lại, Flexbox là hệ thống 1 chiều (1D - hàng hoặc cột), hoạt động theo cơ chế linh hoạt dựa trên dung lượng nội dung (Content-first). Điều này giúp Flexbox trở thành lựa chọn hoàn hảo cho các Component chi tiết (như Navbar, Card header, nút bấm) – nơi các phần tử con cần tự động căn chỉnh, thu giãn hoặc giữ khoảng cách tự nhiên mà không làm vỡ giao diện khi nội dung thay đổi.

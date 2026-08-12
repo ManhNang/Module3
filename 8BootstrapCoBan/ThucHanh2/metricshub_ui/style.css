@@ -1,0 +1,22 @@
+.bad-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333;
+    color: white;
+    padding: 15px;
+}
+.grid-dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+.widget {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 5px;
+}
+.widget-large {
+    grid-row: span 2;
+}

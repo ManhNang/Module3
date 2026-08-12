@@ -1,0 +1,3 @@
+Thuộc tính position: absolute đưa phần tử ra khỏi dòng chảy tự nhiên của văn bản (document flow). Điều này khiến phần tử cha bị mất chiều cao thực tế (height collapse), dẫn đến các thành phần UI phía dưới không xác định được tọa độ và đè lấn lên nhau—đặc biệt khi co bóp trên màn hình di động. Ngoài ra, việc lạm dụng kích thước pixel "cứng" khiến giao diện bị vỡ nát và cực kỳ khó bảo trì khi đa dạng hóa thiết bị.
+
+CSS Grid ra đời như một giải pháp cứu cánh toàn diện cho layout 2D bất đối xứng. Grid tự động quản lý luồng hiển thị, tự động tính toán kích thước dòng/cột theo tỷ lệ linh hoạt (fr) và khoảng cách (gap). Nhờ đó, các phần tử con luôn giữ nguyên mối liên kết không gian, giúp nội dung bài viết phía dưới tự động xếp dòng mượt mà mà không bao giờ lo bị che khuất.
