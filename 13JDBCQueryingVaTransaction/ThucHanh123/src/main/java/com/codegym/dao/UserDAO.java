@@ -1,7 +1,10 @@
 package com.codegym.dao;
 
 import com.codegym.model.User;
+
+import java.math.BigDecimal;
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +21,17 @@ public class UserDAO implements IUserDAO {
     private static final String UPDATE_USERS_SQL = "UPDATE users SET name = ?, email = ?, country = ? WHERE id = ?;";
     private static final String SEARCH_USERS_BY_COUNTRY_SQL = "SELECT * FROM users WHERE country LIKE ?;";
     private static final String SORT_USERS_BY_NAME_SQL = "SELECT * FROM users ORDER BY name ASC;";
+    private static final String SQL_INSERT = "INSERT INTO Employee (name, salary, created_Date) VALUES (?,?,?)";
+    private static final String SQL_UPDATE = "UPDATE Employee SET salary=? WHERE name=?";
+    private static final String SQL_TABLE_CREATE = "CREATE TABLE Employee"
+            + "("
+            + " id INT(11) AUTO_INCREMENT,"
+            + " name VARCHAR(100) NOT NULL,"
+            + " salary DECIMAL(15, 2) NOT NULL,"
+            + " created_Date TIMESTAMP,"
+            + " PRIMARY KEY (id)"
+            + ")";
+    private static final String SQL_TABLE_DROP = "DROP TABLE IF EXISTS Employee";
 
     public UserDAO() {
     }
@@ -255,6 +269,43 @@ public class UserDAO implements IUserDAO {
                 connection.setAutoCommit(true);
                 connection.close();
             }
+        }
+    }
+
+    @Override
+    public void insertUpdateWithoutTransaction() {
+        try (Connection conn = getConnection();
+                Statement statement = conn.createStatement();
+                PreparedStatement psInsert = conn.prepareStatement(SQL_INSERT);
+                PreparedStatement psUpdate = conn.prepareStatement(SQL_UPDATE)) {
+
+            // 1. Xoá bảng cũ và tạo lại bảng mới để làm sạch dữ liệu mỗi lần test
+            statement.execute(SQL_TABLE_DROP);
+            statement.execute(SQL_TABLE_CREATE);
+
+            // 2. Chạy tập lệnh Insert (Chèn 2 nhân viên)
+            psInsert.setString(1, "Quynh");
+            psInsert.setBigDecimal(2, new BigDecimal(10));
+            psInsert.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+            psInsert.execute();
+
+            psInsert.setString(1, "Ngan");
+            psInsert.setBigDecimal(2, new BigDecimal(20));
+            psInsert.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+            psInsert.execute();
+
+            // 3. Chạy tập lệnh Update (Cố tình tạo lỗi)
+            // Dòng bên dưới sẽ gây lỗi vì tham số index 1 chưa được gán giá trị
+            psUpdate.setBigDecimal(2, new BigDecimal(999.99));
+            // Lệnh đúng ra phải là: psUpdate.setBigDecimal(1, new BigDecimal(999.99));
+            psUpdate.setString(2, "Quynh");
+
+            // Lệnh execute này sẽ ném ra Exception
+            psUpdate.execute();
+
+        } catch (Exception e) {
+            System.out.println("Đã bắt được lỗi trong quá trình thực thi SQL:");
+            e.printStackTrace();
         }
     }
 }
