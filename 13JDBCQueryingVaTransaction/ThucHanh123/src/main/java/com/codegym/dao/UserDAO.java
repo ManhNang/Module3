@@ -246,6 +246,10 @@ public class UserDAO implements IUserDAO {
                 }
             }
 
+            if (true) {
+                throw new SQLException("Lỗi cố tình tạo ra để test Rollback!");
+            }
+
             // 5. Nếu mọi thứ thành công, tiến hành Commit
             connection.commit();
             System.out.println("Transaction đã được commit thành công!");
